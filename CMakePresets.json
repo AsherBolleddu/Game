@@ -1,5 +1,16 @@
 {
   "version": 3,
-  "configurePresets": [{ "name": "default", "binaryDir": "build" }],
-  "buildPresets": [{ "name": "default", "configurePreset": "default" }]
+  "configurePresets": [
+    {
+      "name": "default",
+      "binaryDir": "build",
+      "generator": "Ninja Multi-Config",
+      "cacheVariables": {
+        "CMAKE_EXPORT_COMPILE_COMMANDS": "ON"
+      }
+    }
+  ],
+  "buildPresets": [
+    { "name": "default", "configurePreset": "default", "jobs": 16 }
+  ]
 }
